@@ -57,6 +57,30 @@ public void setmensaje(String as_mensaje) { this.mensaje = as_mensaje;
         this.pro_nombre = pro_nombre;
     }
 
+    public String getPro_id() {
+        return pro_id;
+    }
+
+    public void setPro_id(String pro_id) {
+        this.pro_id = pro_id;
+    }
+
+    public String getDep_id() {
+        return dep_id;
+    }
+
+    public void setDep_id(String dep_id) {
+        this.dep_id = dep_id;
+    }
+
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
+    }
+
 
 /*METODO INSERTAR */ 
 
