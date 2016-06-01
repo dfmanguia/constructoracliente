@@ -9,10 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.xml.bind.annotation.XmlSeeAlso;
+
 import pkg_entidades.Proyecto;
 import pkg_servicio_web.ServicioWebServidor;
 import pkg_servicio_web.ServicioWebServidor_Service;
 
+@XmlSeeAlso({pkg_entidades.Proyecto.class})
 /**
  *
  * @author diego
@@ -28,18 +31,10 @@ public class cliente_soap {
     public String lug_id = "";
     public String pro_nombre = "";
     public String mensaje = "";
-    List<Proyecto> lista;
 
-    public cliente_soap() {
-    }
+   
 
-    public List<Proyecto> getLista() {
-        return lista;
-    }
-
-    public void setLista(List<Proyecto> lista) {
-        this.lista = lista;
-    }
+    
 
     public String getpro_id() {
         return pro_id;
@@ -165,31 +160,34 @@ public class cliente_soap {
         }
     }
 
-    public List<Proyecto> buscartodo() {
-        String ls_dep_id;
-        List l1;
-        try {
-            l1 = port.buscartodo();
-
+      public List<pkg_servicio_web.Proyecto> buscartodo() {
+          
+          
+        System.out.println("hooola");
+        //String ls_dep_id;
+        List <pkg_servicio_web.Proyecto>l1;
+        l1 = port.getList();
+          System.out.println("dddddd"+l1.size());
+         
+          for (int i = 0; i < l1.size(); i++) {
+              System.out.println(""+l1.get(i).getProId());
+          }
+   
             
-            int a = 0, b = 1, c = 2, d = 3;
-            if (l1.size() >= 1) {
-//Object [] ar_objeto=(Object [])(l1.get(0)); String ls_nombre=ar_objeto[1].toString(); return ls_nombre;
-                for (int i = 0; i < l1.size(); i++) {
-                    Object[] ar_objeto = (Object[]) (l1.get(i));
-
-                    lista.add(new Proyecto(ar_objeto[0].toString(), ar_objeto[1].toString(), ar_objeto[2].toString(), ar_objeto[3].toString()));
-
-                    System.out.println("" + ar_objeto[3].toString() + "ss");
-                }
-
-                return lista;
-            } else {
-                return null;
-            }
-        } catch (Exception ex) {
-            mensaje = "No se pudo encontrar el registro";
-        }
-        return lista;
+     
+        return l1;
     }
+      
+      /*
+    public List<Proyecto> buscartodos()  {
+        
+       List lista = port.buscartodoooo();
+        System.out.println("listaxxx"+lista.size());
+        for (int i = 0; i < lista.size(); i++) {
+             Object[] ar_objeto = (Object[]) (lista.get(i));
+            System.out.println("" + ar_objeto[3].toString() + "ss");
+        }
+       return lista;
+    
+    }*/
 }

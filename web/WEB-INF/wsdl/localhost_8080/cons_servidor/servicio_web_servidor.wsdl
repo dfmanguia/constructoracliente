@@ -4,17 +4,17 @@
 <xsd:import namespace="http://pkg_servicio_web/" schemaLocation="http://localhost:8080/cons_servidor/servicio_web_servidor?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="modificar">
-<part name="parameters" element="tns:modificar"/>
+<message name="buscartodoooo">
+<part name="parameters" element="tns:buscartodoooo"/>
 </message>
-<message name="modificarResponse">
-<part name="parameters" element="tns:modificarResponse"/>
+<message name="buscartodooooResponse">
+<part name="parameters" element="tns:buscartodooooResponse"/>
 </message>
-<message name="buscar">
-<part name="parameters" element="tns:buscar"/>
+<message name="setList">
+<part name="parameters" element="tns:setList"/>
 </message>
-<message name="buscarResponse">
-<part name="parameters" element="tns:buscarResponse"/>
+<message name="setListResponse">
+<part name="parameters" element="tns:setListResponse"/>
 </message>
 <message name="insertar">
 <part name="parameters" element="tns:insertar"/>
@@ -28,20 +28,44 @@
 <message name="eliminarResponse">
 <part name="parameters" element="tns:eliminarResponse"/>
 </message>
-<message name="buscartodo">
-<part name="parameters" element="tns:buscartodo"/>
+<message name="buscar">
+<part name="parameters" element="tns:buscar"/>
 </message>
-<message name="buscartodoResponse">
-<part name="parameters" element="tns:buscartodoResponse"/>
+<message name="buscarResponse">
+<part name="parameters" element="tns:buscarResponse"/>
+</message>
+<message name="modificar">
+<part name="parameters" element="tns:modificar"/>
+</message>
+<message name="modificarResponse">
+<part name="parameters" element="tns:modificarResponse"/>
+</message>
+<message name="getList">
+<part name="parameters" element="tns:getList"/>
+</message>
+<message name="getListResponse">
+<part name="parameters" element="tns:getListResponse"/>
+</message>
+<message name="getProyecto">
+<part name="parameters" element="tns:getProyecto"/>
+</message>
+<message name="getProyectoResponse">
+<part name="parameters" element="tns:getProyectoResponse"/>
+</message>
+<message name="setProyecto">
+<part name="parameters" element="tns:setProyecto"/>
+</message>
+<message name="setProyectoResponse">
+<part name="parameters" element="tns:setProyectoResponse"/>
 </message>
 <portType name="servicio_web_servidor">
-<operation name="modificar">
-<input wsam:Action="http://pkg_servicio_web/servicio_web_servidor/modificarRequest" message="tns:modificar"/>
-<output wsam:Action="http://pkg_servicio_web/servicio_web_servidor/modificarResponse" message="tns:modificarResponse"/>
+<operation name="buscartodoooo">
+<input wsam:Action="http://pkg_servicio_web/servicio_web_servidor/buscartodooooRequest" message="tns:buscartodoooo"/>
+<output wsam:Action="http://pkg_servicio_web/servicio_web_servidor/buscartodooooResponse" message="tns:buscartodooooResponse"/>
 </operation>
-<operation name="buscar">
-<input wsam:Action="http://pkg_servicio_web/servicio_web_servidor/buscarRequest" message="tns:buscar"/>
-<output wsam:Action="http://pkg_servicio_web/servicio_web_servidor/buscarResponse" message="tns:buscarResponse"/>
+<operation name="setList">
+<input wsam:Action="http://pkg_servicio_web/servicio_web_servidor/setListRequest" message="tns:setList"/>
+<output wsam:Action="http://pkg_servicio_web/servicio_web_servidor/setListResponse" message="tns:setListResponse"/>
 </operation>
 <operation name="insertar">
 <input wsam:Action="http://pkg_servicio_web/servicio_web_servidor/insertarRequest" message="tns:insertar"/>
@@ -51,14 +75,30 @@
 <input wsam:Action="http://pkg_servicio_web/servicio_web_servidor/eliminarRequest" message="tns:eliminar"/>
 <output wsam:Action="http://pkg_servicio_web/servicio_web_servidor/eliminarResponse" message="tns:eliminarResponse"/>
 </operation>
-<operation name="buscartodo">
-<input wsam:Action="http://pkg_servicio_web/servicio_web_servidor/buscartodoRequest" message="tns:buscartodo"/>
-<output wsam:Action="http://pkg_servicio_web/servicio_web_servidor/buscartodoResponse" message="tns:buscartodoResponse"/>
+<operation name="buscar">
+<input wsam:Action="http://pkg_servicio_web/servicio_web_servidor/buscarRequest" message="tns:buscar"/>
+<output wsam:Action="http://pkg_servicio_web/servicio_web_servidor/buscarResponse" message="tns:buscarResponse"/>
+</operation>
+<operation name="modificar">
+<input wsam:Action="http://pkg_servicio_web/servicio_web_servidor/modificarRequest" message="tns:modificar"/>
+<output wsam:Action="http://pkg_servicio_web/servicio_web_servidor/modificarResponse" message="tns:modificarResponse"/>
+</operation>
+<operation name="getList">
+<input wsam:Action="http://pkg_servicio_web/servicio_web_servidor/getListRequest" message="tns:getList"/>
+<output wsam:Action="http://pkg_servicio_web/servicio_web_servidor/getListResponse" message="tns:getListResponse"/>
+</operation>
+<operation name="getProyecto">
+<input wsam:Action="http://pkg_servicio_web/servicio_web_servidor/getProyectoRequest" message="tns:getProyecto"/>
+<output wsam:Action="http://pkg_servicio_web/servicio_web_servidor/getProyectoResponse" message="tns:getProyectoResponse"/>
+</operation>
+<operation name="setProyecto">
+<input wsam:Action="http://pkg_servicio_web/servicio_web_servidor/setProyectoRequest" message="tns:setProyecto"/>
+<output wsam:Action="http://pkg_servicio_web/servicio_web_servidor/setProyectoResponse" message="tns:setProyectoResponse"/>
 </operation>
 </portType>
 <binding name="servicio_web_servidorPortBinding" type="tns:servicio_web_servidor">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="modificar">
+<operation name="buscartodoooo">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -67,7 +107,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="buscar">
+<operation name="setList">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -94,7 +134,43 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="buscartodo">
+<operation name="buscar">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="modificar">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getList">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getProyecto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="setProyecto">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

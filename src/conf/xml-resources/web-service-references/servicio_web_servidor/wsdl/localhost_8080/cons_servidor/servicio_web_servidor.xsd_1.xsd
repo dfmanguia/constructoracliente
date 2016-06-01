@@ -4,13 +4,21 @@
 
 <xs:element name="buscarResponse" type="tns:buscarResponse"/>
 
-<xs:element name="buscartodo" type="tns:buscartodo"/>
+<xs:element name="buscartodoooo" type="tns:buscartodoooo"/>
 
-<xs:element name="buscartodoResponse" type="tns:buscartodoResponse"/>
+<xs:element name="buscartodooooResponse" type="tns:buscartodooooResponse"/>
 
 <xs:element name="eliminar" type="tns:eliminar"/>
 
 <xs:element name="eliminarResponse" type="tns:eliminarResponse"/>
+
+<xs:element name="getList" type="tns:getList"/>
+
+<xs:element name="getListResponse" type="tns:getListResponse"/>
+
+<xs:element name="getProyecto" type="tns:getProyecto"/>
+
+<xs:element name="getProyectoResponse" type="tns:getProyectoResponse"/>
 
 <xs:element name="insertar" type="tns:insertar"/>
 
@@ -19,6 +27,25 @@
 <xs:element name="modificar" type="tns:modificar"/>
 
 <xs:element name="modificarResponse" type="tns:modificarResponse"/>
+
+<xs:element name="setList" type="tns:setList"/>
+
+<xs:element name="setListResponse" type="tns:setListResponse"/>
+
+<xs:element name="setProyecto" type="tns:setProyecto"/>
+
+<xs:element name="setProyectoResponse" type="tns:setProyectoResponse"/>
+
+<xs:complexType name="proyecto">
+<xs:sequence>
+<xs:element name="dep_id" type="xs:string" minOccurs="0"/>
+<xs:element name="lista" type="tns:proyecto" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="listas" type="tns:proyecto" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="lug_id" type="xs:string" minOccurs="0"/>
+<xs:element name="pro_id" type="xs:string" minOccurs="0"/>
+<xs:element name="pro_nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
 
 <xs:complexType name="insertar">
 <xs:sequence>
@@ -59,6 +86,36 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="buscartodoooo">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="buscartodooooResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getList">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getListResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:proyecto" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setProyecto">
+<xs:sequence>
+<xs:element name="arg0" type="tns:proyecto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setProyectoResponse">
+<xs:sequence/>
+</xs:complexType>
+
 <xs:complexType name="modificar">
 <xs:sequence>
 <xs:element name="pro_id" type="xs:string" minOccurs="0"/>
@@ -74,13 +131,23 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="buscartodo">
+<xs:complexType name="getProyecto">
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="buscartodoResponse">
+<xs:complexType name="getProyectoResponse">
 <xs:sequence>
-<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="return" type="tns:proyecto" minOccurs="0"/>
 </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setList">
+<xs:sequence>
+<xs:element name="arg0" type="tns:proyecto" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setListResponse">
+<xs:sequence/>
 </xs:complexType>
 </xs:schema>
