@@ -19,14 +19,22 @@
 <h:inputText id="codigo" value="#{cliente_soap.pro_id}" />
 <br></br>
 <h:outputText value="Nombre:"/>
-<h:inputText id="nombre" value="#{cliente_soap.dep_id}"/>
+<h:inputText id="dep" value="#{cliente_soap.dep_id}"/>
+
+<br></br>
+<h:outputText value="Nombre:"/>
+<h:inputText id="lug" value="#{cliente_soap.lug_id}"/>
+
+<br></br>
+<h:outputText value="Nombre:"/>
+<h:inputText id="nomb" value="#{cliente_soap.pro_nombre}"/>
 <br></br><br></br>
-<h:commandButton id="insertar" value="Insertar" action="#{cls_cliente_soap.insertar}"> </h:commandButton>
-<h:commandButton id="eliminar" value="Eliminar" action="#{cls_cliente_soap.eliminar}" > </h:commandButton>
-<h:commandButton id="modificar" value="Modificar" action="#{cls_cliente_soap.modificar}"> </h:commandButton>
-<h:commandButton id="buscar" value="Buscar" action="#{cls_cliente_soap.buscar}"> </h:commandButton>
+<h:commandButton id="insertar" value="Insertar" action="#{cliente_soap.insertar}"> </h:commandButton>
+<h:commandButton id="eliminar" value="Eliminar" action="#{cliente_soap.eliminar}" > </h:commandButton>
+<h:commandButton id="modificar" value="Modificar" action="#{cliente_soap.modificar}"> </h:commandButton>
+<h:commandButton id="buscar" value="Buscar" action="#{cliente_soap.buscar}"> </h:commandButton>
 <br></br><br></br>
-<h:outputText value="#{cls_cliente_soap.mensaje}"/>
+<h:outputText value="#{cliente_soap.mensaje}"/>
 </h:form>
 </div> </h:body>
 </html>

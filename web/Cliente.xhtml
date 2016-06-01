@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/templates/clearTemplate2.xhtml">
+
+        <ui:define name="tituloPagina">Proyectos</ui:define>
+        <ui:define name="tituloFormulario">FORMULARIO PROYECTOS</ui:define>
+        <ui:define name="contenido">
+
+            <h:form id="frmprincipal">
+                <p:growl id="mensajeGeneral" showDetail="true"/>
+                <p:panel id="panel2">
+                    <h:panelGrid id="panel" columns="1">
+                        <p:outputLabel for="idProd" value="Id del Proyecto" />
+                        <p:inputText id="idProd" required="true" value="#{cliente_soap.pro_id}"></p:inputText>
+
+                        <p:outputLabel for="codBarras" value="Id del Departamento" />
+                        <p:inputText id="codBarras" required="true" value="#{cliente_soap.dep_id}"></p:inputText>
+
+                        <p:outputLabel for="codBarras2" value="Id del lugar" />
+                        <p:inputText id="codBarras2" required="true" value="#{cliente_soap.lug_id}"></p:inputText>
+
+                        <p:outputLabel for="nombre" value="Nombre de Proyecto" />
+                        <p:inputText id="nombre" required="true" value="#{cliente_soap.pro_nombre}"></p:inputText>
+
+
+                    </h:panelGrid>
+
+                    <h:panelGrid id="panel4" columns="3">
+                        <p:commandButton action="#{cliente_soap.insertar()}" value="INSERTAR" update="panel,tabla"></p:commandButton>
+                        <p:commandButton action="#{cliente_soap.modificar()}" value="MODIFICAR" update="panel,tabla"></p:commandButton>
+                    </h:panelGrid>
+                </p:panel>
+                <p:panel id="panel3">
+                    <h:panelGrid id="paneltabla" columns="1" >
+                        <p:dataTable id="tabla" value="#{cliente_soap.buscartodo()}" var="UsuariosItem" scrollable="true" scrollHeight="300" >
+                            <f:facet name="header">
+                                <h:outputText value="PROYECTOS"/>
+                            </f:facet>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="ID DEL PROYECTO"/>
+                                </f:facet>
+                                <h:outputText value="#{UsuariosItem.pro_id}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="CEDULA"/>
+                                </f:facet>
+                                <h:outputText value="#{cliente_soap.dep_id}"/>
+                            </p:column>
+                            
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="TELÉFONO CONVENCIONAL"/>
+                                </f:facet>
+                                <h:outputText value="#{cliente_soap.lug_id}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="TELÉFONO CELULAR"/>
+                                </f:facet>
+                                <h:outputText value="#{cliente_soap.pro_nombre}"/>
+                            </p:column>
+                            
+
+                     
+
+                            <f:facet name="footer">
+                                <h:outputText value="fin"/>
+                            </f:facet>
+                        </p:dataTable>
+                    </h:panelGrid>
+                </p:panel>
+
+            </h:form>
+        </ui:define>
+
+    </ui:composition>    
+</html>
