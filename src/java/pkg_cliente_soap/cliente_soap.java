@@ -162,10 +162,10 @@ public class cliente_soap {
 
       public List<pkg_servicio_web.Proyecto> buscartodo() {
           
-          
-        System.out.println("hooola");
+         List aux=port.buscartodoooo();
         //String ls_dep_id;
         List <pkg_servicio_web.Proyecto>l1;
+        
         l1 = port.getList();
           System.out.println("dddddd"+l1.size());
          
